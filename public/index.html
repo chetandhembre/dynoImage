@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+        <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>    
+        <script type="application/javascript">
+            $('document').ready(function() {
+                $.ajax({
+                    url : '/dynoImage',
+                    type : 'post',
+                    timeout: 4 * 60 * 1000,
+                    success : function(data) {
+                        //$("#img").attr('src',data.img);
+                        $('body').append(data);
+                    }
+                });    
+                    
+            });
+        </script>
+    </head>
+    <body>
+        <img src="" style="width:100px; height:100px" id="img">
+    </body>
+</html>
